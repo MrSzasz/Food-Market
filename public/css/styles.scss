@@ -1,58 +1,101 @@
+/**/
+
+// variables
+
+$white: #fbfaf5;
+$orange: #F5380C;
+$black: #000500;
+$red: #CF2929;
+$yellow: #FEE119;
+
 ::selection {
-    background-color: red;
-    color: white;
+    background-color: $orange;
+    color: $white;
 }
+
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f3f3f3;
+    background-color: $white;
+    width: 100%;
+    height: min-content;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    scroll-snap-align: start;
+    grid-template-rows: 10vh min-content 100vh;
+}
+
+header {
+    background-color: $red;
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    .logo {
+        height: 80px;
+        width: 80px;
+    }
 }
 
 main {
-    height: 93vh;
-    width: 100vw;
+    display: grid;
+    grid-template-rows: 90vh 30vh 70vh 100vh 50vh 50vh;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    row-gap: 25px;
+}
+
+.carousel {
+    background-color: blue;
+    grid-row: 1/2;
+}
+
+.containerPromos {
     display: flex;
-    justify-content: center;
     align-items: center;
-    .logo{
-        z-index: 2;
-        height: 100px;
-        width: 120px;
-        background-color: rebeccapurple;
+    justify-content: space-around;
+    background-color: green;
+    grid-row: 2/3;
+
+    .promo {
+        background-color: #000500;
+        height: 100%;
+        width: 30%;
+        transition: ease all 0.25s;
+
+        &:hover {
+            border: 2px solid white;
+        }
     }
 }
 
-.mainContainer {
-    z-index: 1;
-    position: absolute;
-    background-color: black;
-    width: 98vw;
-    height: 89vh;
+.containerPremadeShop {
+    background-color: pink;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.foodMaker {
+    background-color: yellow;
+    grid-row: 4/5;
+}
+
+.testimonial {
+    background-color: orange;
+    grid-row: 5/6;
+}
+
+.aboutUs {
+    background-color: lightblue;
+    grid-row: 6/7;
 }
 
 footer {
-    position: fixed;
-    display: flex;
-    bottom: 0;
-    height: 9vh;
-    width: 100vw;
-    background-color: #f3f3f3;
-    justify-content: center;
-
-    nav {
-        background-color: red;
-        height: 100%;
-        width: 98vw;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        .choices{
-            width: 100px;
-            height: 80%;
-            background-color: blue;
-        }
-    }
+    margin-top: 25px;
+    background-color: coral;
+    grid-column: 2/3;
+    grid-row: 3/4;
 }
