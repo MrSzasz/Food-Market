@@ -60,13 +60,58 @@ main {
     grid-row: 2/3;
 
     .promo {
-        background-color: #000500;
+        // background-color: #000500;
         height: 100%;
         width: 30%;
         transition: ease all 0.25s;
+    }
+
+    .promo1 {
+        background-color: $orange;
+        background-image: url(../resources/promo/promo1.png);
+        background-position: 140px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        p {
+            width: 50%;
+            text-align: center;
+        }
 
         &:hover {
-            border: 2px solid white;
+            background-size: 110%;
+            background-position: 105px;
+        }
+    }
+    .promo2 {
+        background-color: $orange;
+        background-image: url(../resources/promo/promo2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        p {
+            text-align: center;
+        }
+
+        &:hover {
+            background-size: 110%;
+            background-position: top;
+        }
+    }
+    .promo3 {
+        background-color: $orange;
+        background-image: url(../resources/promo/promo3.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        p {
+            text-align: center;
+        }
+
+        &:hover {
+            background-size: 110%;
         }
     }
 }
@@ -89,13 +134,61 @@ main {
 }
 
 .aboutUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
     background-color: lightblue;
     grid-row: 6/7;
+    justify-content: space-around;
+
+    .localImg {
+        background-color: rebeccapurple;
+        grid-column: 1/2;
+    }
+
+    .descAboutUs {
+        background-color: rebeccapurple;
+        grid-column: 2/3;
+    }
+
+    .iframeMaps {
+        background-color: rebeccapurple;
+        grid-column: 3/4;
+    }
 }
 
 footer {
+    display: grid;
     margin-top: 25px;
     background-color: coral;
-    grid-column: 2/3;
     grid-row: 3/4;
+    grid-column: 2/3;
+    grid-template-rows: 1fr 1fr;
+
+    .mailDiscount {
+        grid-row: 1/2;
+        background-color: #CF2929;
+    }
+
+    .bottomContact {
+        background-color: #FEE119;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        .leftContact {
+            grid-column: 1/2;
+            background-color: antiquewhite;
+        }
+
+        .centerContact {
+            grid-column: 2/3;
+            background-color: hotpink;
+        }
+
+        .rightContact {
+            grid-column: 3/4;
+            background-color: olive;
+        }
+    }
 }
